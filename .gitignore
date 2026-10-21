@@ -1,0 +1,17 @@
+.DS_Store
+*.log
+
+# frontend
+node_modules/
+policymind-frontend/node_modules/
+policymind-frontend/dist/
+policymind-frontend/src/.umi/
+policymind-frontend/.umi/
+.pnpm-store/
+
+# backend
+policymind-backend/target/
+
+# local env
+.env
+.env.local

@@ -1,0 +1,141 @@
+.pm-diff {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pm-diff__legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 2px;
+  color: var(--pm-faint);
+  font-size: 10.5px;
+}
+
+.pm-diff__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pm-diff__legend-tip {
+  margin-left: auto;
+}
+
+.pm-diff__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.pm-diff__swatch--before {
+  background: var(--pm-danger-soft);
+  border: 1px solid var(--pm-danger);
+}
+
+.pm-diff__swatch--after {
+  background: var(--pm-success-soft);
+  border: 1px solid var(--pm-success);
+}
+
+.pm-diff__card {
+  border: 1px solid var(--pm-border);
+  border-radius: 9px;
+  padding: 12px;
+  background: var(--pm-surface);
+}
+
+.pm-diff__compare {
+  display: grid;
+  grid-template-columns: 1fr 18px 1fr;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.pm-diff__side {
+  border-radius: 7px;
+  padding: 8px 10px;
+  font-family: var(--pm-essay-font);
+  font-size: 13.5px;
+  line-height: 1.7;
+  position: relative;
+}
+
+.pm-diff__side p {
+  margin: 0;
+}
+
+.pm-diff__side--before {
+  background: var(--pm-danger-soft);
+  color: var(--pm-danger);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.pm-diff__side--after {
+  background: var(--pm-success-soft);
+  color: var(--pm-success);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pm-diff__tag {
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.pm-diff__arrow {
+  align-self: center;
+  color: var(--pm-faint);
+  font-size: 11px;
+}
+
+.pm-diff__foot {
+  margin-top: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pm-diff__reason {
+  color: var(--pm-faint);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+.pm-diff-empty {
+  min-height: 140px;
+  border: 1px dashed var(--pm-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--pm-faint);
+  font-size: 11.5px;
+}
+
+.pm-diff-empty .anticon {
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+  .pm-diff__compare {
+    grid-template-columns: 1fr;
+  }
+  .pm-diff__arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+}

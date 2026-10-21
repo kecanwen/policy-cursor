@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  tomcat:
+    connection-timeout: 200s
+
+spring:
+  application:
+    name: policymind-backend
+  mvc:
+    async:
+      # 申论长文本精批通常需要 10s - 30s，留足余量
+      request-timeout: 180s
+  ai:
+    openai:
+      base-url: ${AI_BASE_URL:https://api.deepseek.com}
+      api-key: ${AI_API_KEY:sk-placeholder}
+      chat:
+        options:
+          model: ${AI_MODEL:deepseek-chat}
+          temperature: 0.35
+
+policymind:
+  ai:
+    # 未配置真实 Key 时，默认走确定性演示评卷，保证前端链路可直接跑通
+    mock-enabled: ${POLICYMIND_AI_MOCK:true}
+
+logging:
+  level:
+    com.policymind: INFO
